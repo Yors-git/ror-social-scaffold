@@ -15,4 +15,8 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def is_friend?(user)
+    !!user.friend?(current_user)
+  end
 end

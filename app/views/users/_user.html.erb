@@ -3,4 +3,9 @@
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
   </span>
+  <p>
+  <% if !is_friend?(user) && user != current_user %>
+  <%= link_to 'Invite as friend', create_freindship_user_path(user.id)  %>
+  <% end %>
+  </p>
 </li>
