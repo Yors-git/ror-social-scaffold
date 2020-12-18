@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :accept
+      get :decline
       get :create_freindship
     end
   end
