@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'ROR Social Scaffold', type: :system do
+RSpec.describe 'ROR-Social Scaffold', type: :system do
   describe 'signUp' do
     scenario 'signup a new user' do
       visit 'users/sign_up'
