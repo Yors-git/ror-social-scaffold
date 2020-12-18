@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
   <body>
     <nav class="nav">
@@ -19,6 +20,7 @@
         </div>
       </div>
       <% if current_user %>
+        <%= link_to "Logged as: #{current_user.name}", user_path(current_user), method: :get %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign in', user_session_path %>

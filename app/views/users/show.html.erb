@@ -1,9 +1,45 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <% if !friend?(@user) && @user.id != current_user.id  && !@pending_inv.include?(current_user) %>
+  <%= button_to 'Invite as friend', create_freindship_user_path, :method => :get  %>
+  <% end %>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
     </ul>
   </article>
+  <div>
+    <h3>Friends:</h3><br>
+    <ul>
+      <% @friends.each do |friend| %>
+      <li><%= friend.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <h3>Pending Sent Requests:</h3><br>
+    <ul>
+      <% @pending_req.each do |usr| %>
+      <li><%= usr.name %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <h3>Pending Requests:</h3><br>
+    <ul>
+      <% @pending_inv.each do |usr| %>
+      <li><%= usr.name %>  
+      <% if @user.id == current_user.id %>
+        <%= button_to 'Accept', accept_user_path, method: :get, params: { data: usr }%>      
+        <%= button_to 'Decline', decline_user_path, method: :get, params: { data: usr } %>
+      <% end %> 
+      </li>
+      <br>  
+      <% end %>
+    </ul>
+  </div>
+
 </section>
