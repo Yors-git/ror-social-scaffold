@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :model do
+RSpec.describe 'User', type: :model do
   let(:user) { User.create(name: 'rspec', email: 'rspec@test.com', password: '123456') }
   let(:inv_user) { User.create(name: '', email: 'rspec@test.com', password: '123456') }
   let(:posts) { User.reflect_on_association(:posts).macro }

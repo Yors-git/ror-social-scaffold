@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Friendships', type: :model do
+RSpec.describe 'Friendship', type: :model do
   let(:user1) { User.create(name: 'rspec1', email: 'rspec1@test.com', password: '123456') }
   let(:user2) { User.create(name: 'rspec2', email: 'rspec2@test.com', password: '123456') }
   let(:friendship) { Friendship.create(user_id: user1.id, friend_id: user2.id, confirmed: false) }
