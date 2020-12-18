@@ -16,11 +16,11 @@ RSpec.describe 'Friendship', type: :model do
     expect(inv_friendship).to_not be_valid
   end
 
-  it 'check correct association' do
+  it 'check correct association between user and friendships' do
     expect(user).to eq(:belongs_to)
   end
 
-  it 'check correct association' do
+  it 'check correct association between friend and friendships' do
     expect(friend).to eq(:belongs_to)
   end
 end

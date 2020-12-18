@@ -17,23 +17,23 @@ RSpec.describe 'User', type: :model do
     expect(inv_user).to_not be_valid
   end
 
-  it 'check correct association' do
+  it 'check correct association between posts and user' do
     expect(posts).to eq(:has_many)
   end
 
-  it 'check correct association' do
+  it 'check correct association between comments and user' do
     expect(comments).to eq(:has_many)
   end
 
-  it 'check correct association' do
+  it 'check correct association between likes and user' do
     expect(likes).to eq(:has_many)
   end
 
-  it 'check correct association' do
+  it 'check correct association between friendships and user' do
     expect(friendships).to eq(:has_many)
   end
 
-  it 'check correct association' do
+  it 'check correct association between inverse_friendships and user ' do
     expect(inverse_friendships).to eq(:has_many)
   end
 end
