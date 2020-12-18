@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user.confirm_friend(user)
     redirect_to request.referrer, notice: 'Friend request confirmed'
   end
-  
+
   def decline
     @pending_inv = @user.friend_requests_to_me
     data = params[:data]
@@ -32,13 +32,13 @@ class UsersController < ApplicationController
     @user.decline_friend(user)
     redirect_to request.referrer, notice: 'Friend request rejected'
   end
-  
+
   private
-  
+
   def set_user
     @user = User.find(params[:id])
   end
-  
+
   def set_post
     @posts = @user.posts.ordered_by_most_recent
   end

@@ -32,7 +32,7 @@ RSpec.describe 'Users', type: :model do
   it 'check correct association' do
     expect(friendships).to eq(:has_many)
   end
-  
+
   it 'check correct association' do
     expect(inverse_friendships).to eq(:has_many)
   end
