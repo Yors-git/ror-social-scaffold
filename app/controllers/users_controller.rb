@@ -8,17 +8,18 @@ class UsersController < ApplicationController
 
   def show
     @friends = @user.friends
-    @pending_req = @user.friend_requests_from_me
-    @pending_inv = @user.friend_requests_to_me
+    @pending_inv = @user.friend_requests
+    @pending_req = @user.pending_friends
   end
 
   def create_freindship
-    current_user.friendships.create(user_id: current_user.id, friend_id: @user.id, confirmed: false)
+    Friendship.create(user_id: current_user.id, friend_id: @user.id, confirmed: false)
+    # current_user.friendships.create(user_id: current_user.id, friend_id: @user.id, confirmed: false)
     redirect_to request.referrer, notice: 'Friend request sent'
   end
 
   def accept
-    @pending_inv = @user.friend_requests_to_me
+    @pending_inv = @user.pending_friends
     data = params[:data]
     user = User.find(data)
     @user.confirm_friend(user)
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def decline
-    @pending_inv = @user.friend_requests_to_me
+    @pending_inv = @user.pending_friends
     data = params[:data]
     user = User.find(data)
     @user.decline_friend(user)

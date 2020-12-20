@@ -16,7 +16,7 @@ module ApplicationHelper
     end
   end
 
-  def friend?(user)
-    user.friend?(current_user)
-  end
+  # def friend?(user)
+  #   user.friend?(current_user)
+  # end
 end
