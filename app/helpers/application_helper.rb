@@ -37,4 +37,17 @@ module ApplicationHelper
       button_to 'Invite friend', create_freindship_user_path(user.id), method: :get
     end
   end
+
+  def invite_friend_show(user, pending_inv, pending_req)
+    if !user.friends.include?(current_user) && user.id != current_user.id  && !pending_inv.include?(current_user) && !pending_req.include?(current_user)
+      button_to 'Invite friend', create_freindship_user_path, :method => :get
+    end
+  end
+
+  def accept_and_decline_btns(usr)
+    if @user.id == current_user.id 
+      (button_to 'Accept', accept_user_path, method: :get, params: { data: usr }) +
+      (button_to 'Decline', decline_user_path, method: :get, params: { data: usr })
+    end
+  end
 end
