@@ -6,8 +6,9 @@ RSpec.describe 'User', type: :model do
   let(:posts) { User.reflect_on_association(:posts).macro }
   let(:comments) { User.reflect_on_association(:comments).macro }
   let(:likes) { User.reflect_on_association(:likes).macro }
-  let(:friendships) { User.reflect_on_association(:friendships).macro }
-  let(:inverse_friendships) { User.reflect_on_association(:inverse_friendships).macro }
+  let(:friends) { User.reflect_on_association(:friends).macro }
+  let(:pending_friends) { User.reflect_on_association(:pending_friends).macro }
+  let(:friend_requests) { User.reflect_on_association(:friend_requests).macro }
 
   it 'checks if creating user is correct' do
     expect(user).to be_valid
@@ -30,10 +31,14 @@ RSpec.describe 'User', type: :model do
   end
 
   it 'check correct association between friendships and user' do
-    expect(friendships).to eq(:has_many)
+    expect(friends).to eq(:has_many)
   end
 
   it 'check correct association between inverse_friendships and user ' do
-    expect(inverse_friendships).to eq(:has_many)
+    expect(pending_friends).to eq(:has_many)
+  end
+
+  it 'check correct association between inverse_friendships and user ' do
+    expect(friend_requests).to eq(:has_many)
   end
 end
