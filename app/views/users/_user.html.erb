@@ -4,8 +4,6 @@
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
   </span>
   <p>
-  <% if !user.friends.include?(current_user) && user != current_user && !user.pending_friends.include?(current_user) && !user.friend_requests.include?(current_user) %>
-  <%=  button_to 'Invite friend', create_freindship_user_path(user.id), method: :get  %>
-  <% end %>
+  <%= invite_friend_index(user)%>
   </p>
 </li>

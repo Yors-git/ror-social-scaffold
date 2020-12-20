@@ -31,4 +31,10 @@ module ApplicationHelper
     result += "<div class='notice'><p> #{alert} </p></div>" if alert.present?
     result.html_safe  
   end
+
+  def invite_friend_index(user)
+    if !user.friends.include?(current_user) && user != current_user && !user.pending_friends.include?(current_user) && !user.friend_requests.include?(current_user)
+      button_to 'Invite friend', create_freindship_user_path(user.id), method: :get
+    end
+  end
 end
