@@ -12,7 +12,7 @@ RSpec.describe 'Post', type: :model do
     expect(post).to be_valid
   end
 
-  it 'check user name validation' do
+  it 'check post content validation' do
     expect(inv_post).to_not be_valid
   end
 

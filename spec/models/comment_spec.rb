@@ -12,7 +12,7 @@ RSpec.describe 'Comment', type: :model do
     expect(comment).to be_valid
   end
 
-  it 'check user name validation' do
+  it 'check comment content validation' do
     expect(inv_comment).to_not be_valid
   end
 
