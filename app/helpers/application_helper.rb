@@ -48,7 +48,7 @@ module ApplicationHelper
   def accept_and_decline_btns(usr)
     if @user.id == current_user.id
       (button_to 'Accept', accept_user_path, method: :get, params: { data: usr }) +
-        (button_to 'Decline', decline_user_path, method: :get, params: { data: usr })
+        (button_to 'Decline', decline_user_path, method: :get, params: { data: usr }, class: 'red_button')
     end
   end
   # rubocop: enable Style/GuardClause, Layout/LineLength
