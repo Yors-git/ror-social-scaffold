@@ -16,7 +16,19 @@ module ApplicationHelper
     end
   end
 
-  # def friend?(user)
-  #   user.friend?(current_user)
-  # end
+  def check_current_user
+    sign_out_btn =  (link_to 'Sign out', destroy_user_session_path, method: :delete)
+    if signed_in?
+      (link_to "Logged as: #{current_user.name}", user_path(current_user), method: :get) + sign_out_btn
+    else
+      link_to 'Sign in', user_session_path
+    end
+  end
+
+  def show_messages    
+    result = ''    
+    result += "<div class='notice'><p> #{notice} </p></div>"  if notice.present?
+    result += "<div class='notice'><p> #{alert} </p></div>" if alert.present?
+    result.html_safe  
+  end
 end
