@@ -50,11 +50,12 @@ class User < ApplicationRecord
   end
 
   def decline_friend(user)
-    friendship = inverse_friendships.find { |frship| frship.user == user }
+    friendship = inverted_friendships.find { |frship| frship.user_id == user.id }
     friendship.destroy
   end
 
-  # def friend?(user)
-  #   friends.include?(user)
-  # end
+  def friends_and_own_posts
+    Post.where(user: (self.friends))
+    # This will produce SQL query with IN. Something like: select * from posts where user_id IN (1,45,874,43);
+  end
 end

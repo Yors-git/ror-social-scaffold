@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def create_freindship
     Friendship.create(user_id: current_user.id, friend_id: @user.id, confirmed: false)
-    # current_user.friendships.create(user_id: current_user.id, friend_id: @user.id, confirmed: false)
     redirect_to request.referrer, notice: 'Friend request sent'
   end
 

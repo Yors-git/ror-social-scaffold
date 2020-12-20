@@ -5,7 +5,6 @@
   </span>
   <p>
   <% if !user.friends.include?(current_user) && user != current_user && !user.pending_friends.include?(current_user) && !user.friend_requests.include?(current_user) %>
-  <%# if !friend?(user) && user != current_user && user.inverse_friendships.find{|usr| usr.user_id == current_user.id}.nil? && user.friendships.find{|usr| usr.friend_id == current_user.id}.nil? %>
   <%=  button_to 'Invite friend', create_freindship_user_path(user.id), method: :get  %>
   <% end %>
   </p>
