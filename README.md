@@ -1,20 +1,16 @@
 # Scaffold for social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+>  In this project there is a social media app that was scaffolded by the Microverse team and the purpose was to implement friendships between users, with the functionality to invite friend, see the pending sent and received invitations and lastly accept or decline those invitation.
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- VSCode
 
 ## Live Demo
 
 TBA
-
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
@@ -22,56 +18,23 @@ Ruby: 2.6.3
 Rails: 5.2.3
 Postgres: >=9.5
 
-### Setup
+### Instructions To Setup Application
 
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+1. - Run `git clone git@github.com:Yors-git/ror-social-scaffold.git` to download 
+4. - Run `bundle install` to install Ruby Gems
+6. - Run `rails db:create` to create a local database
+7. - Run `rails db:migrate` to migrate the database
+8. - Run `rails s`
+8. - Run `http://localhost:3000/` in your browser to start the application
 
 
-### Usage
+## Author:
 
-Start server with:
+### 👨‍💻 Jorge Torres
 
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
-
-## Authors
-
-TBA
+- Github: [Jorge Torres](https://github.com/Yors-git)
+- Linkedin: [Jorge Torres](https://www.linkedin.com/in/jtbribiesca/)
+- Twitter: [@Yors_82](https://twitter.com/Yors_82)
 
 ## 🤝 Contributing
 
@@ -85,9 +48,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+Microverse Team for the scaffolding
 
 ## 📝 License
 
-TBA
-
+This is a Microverse project, all rights reserved to Microverse team & Jorge Torres

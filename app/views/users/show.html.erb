@@ -1,9 +1,40 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <%= invite_friend_show(@user, @pending_inv, @pending_req) %>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
     </ul>
   </article>
+  <div>
+    <h3>Friends:</h3><br>
+    <ul>
+      <% @friends.each do |friend| %>
+      <li><%= friend.name %></li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <h3>Pending Sent Requests:</h3><br>
+    <ul>
+      <% @pending_req.each do |usr| %>
+      <li><%= usr.name %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <h3>Pending Requests:</h3><br>
+    <ul>
+      <% @pending_inv.each do |usr| %>
+      <li><%= usr.name %>  
+      <%= accept_and_decline_btns(usr) %>
+      </li>
+      <br>  
+      <% end %>
+    </ul>
+  </div>
+
 </section>

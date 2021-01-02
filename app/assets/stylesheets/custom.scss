@@ -157,7 +157,7 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: 100%;
     }
   }
 
@@ -346,4 +346,8 @@ form {
   .user-section {
     width: 50%;
   }
+}
+
+.red_button {
+  background-color: #f00 !important;
 }
