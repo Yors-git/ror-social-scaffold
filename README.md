@@ -2,6 +2,10 @@
 
 >  In this project there is a social media app that was scaffolded by the Microverse team and the purpose was to implement friendships between users, with the functionality to invite friend, see the pending sent and received invitations and lastly accept or decline those invitation.
 
+## Screenshot
+
+![img](./app/assets/images/ScreenShot.png)
+
 ## Built With
 
 - Ruby v2.7.0
